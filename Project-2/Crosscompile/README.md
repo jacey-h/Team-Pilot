@@ -1,4 +1,4 @@
-# Cross compiling Qt for RPi
+# Cross compiling Qt 5.15 for RPi 4B
 
 ## Contents    
 - [Step 1: Enable Development Sources](#step-1-enable-development-sources)
@@ -16,7 +16,7 @@
 - [Step 13: Deploy Qt to our Raspberry Pi](#step-13-deploy-qt-to-our-raspberry-pi)
 - [Step 14: Update linker on Raspberry Pi](#step-14-update-linker-on-raspberry-pi)
 - [Step 15: Build an example application](#step-15-build-an-example-application)
-- [Step 16: Add library what you want]()
+- [Step 16: Add library what you want](#step-16-add-library-what-you-want)
 
 ---
 
