@@ -1,13 +1,11 @@
 # PiRacer Setup
 
-- ## Contents  
-    - [Step 1: Create Donkeycar from Template](#step-1-create-donkeycar-from-template)  
+## Contents  
+- [Step 1: Create Donkeycar from Template](#step-1-create-donkeycar-from-template)  
+- [Step 2: Web Control](#step-2-web-control)  
+- [Step 3: Calibrate DonkeyCar](#step-3-calibrate-donkeycar)  
+- [Step 4: Teleoperation ( Shanwan gamepad )](#step-4-teleoperation--shanwan-gamepad)
 
-    - [Step 2: Web Control](#step-2-web-control)  
-
-    - [Step 3: Calibrate DonkeyCar](#step-3-calibrate-donkeycar)  
-
-    - [Step 4: Teleoperation ( Shanwan gamepad )](#step-4-teleoperation--shanwan-gamepad)
 ---
 
 <br/>

@@ -1,25 +1,17 @@
 # Raspberry PI Setup
 
-- ## Contents  
-    - [Step 1: Flash Operating System](#step-1-flash-operating-system) 
+## Contents  
+- [Step 1: Flash Operating System](#step-1-flash-operating-system) 
+- [Step 2: Setup for the first boot](#step-2-setup-for-the-first-boot)  
+- [Step 3: Connecting to the Pi](#step-3-connecting-to-the-pi)  
+- [Step 4: Update and Upgrade](#step-4-update-and-upgrade) 
+- [Step 5: Raspi-config](#step-5-raspi-config)  
+- [Step 6: Install Dependencies](#step-6-install-dependencies)  
+- [Step 7: Install OpenCV Dependencies](#step-7-install-opencv-dependencies)  
+- [Step 8: Setup Virtual Env](#step-8-setup-virtual-env)  
+- [Step 9: Install Donkeycar Python Code](#step-9-install-donkeycar-python-code)  
+- [Step 10: Install OpenCV](#step-10-install-opencv)
 
-    - [Step 2: Setup for the first boot](#step-2-setup-for-the-first-boot)  
-
-    - [Step 3: Connecting to the Pi](#step-3-connecting-to-the-pi)  
-
-    - [Step 4: Update and Upgrade](#step-4-update-and-upgrade) 
-
-    - [Step 5: Raspi-config](#step-5-raspi-config)  
-
-    - [Step 6: Install Dependencies](#step-6-install-dependencies)  
-
-    - [Step 7: Install OpenCV Dependencies](#step-7-install-opencv-dependencies)  
-
-    - [Step 8: Setup Virtual Env](#step-8-setup-virtual-env)  
-
-    - [Step 9: Install Donkeycar Python Code](#step-9-install-donkeycar-python-code)  
-
-    - [Step 10: Install OpenCV](#step-10-install-opencv)
 ---
 <br/>
 
@@ -87,10 +79,10 @@
 2. Connet to Pi
     
     ```bash
-    ssh bugatti@<your pi ip address>
+    ssh <username>@<IP-address>
     ```
     
-    - Username: `bugatti`
+    - Username: `moon`
     - Password: `seame2022`
     - Hostname: `your pi IP address`
 
@@ -123,8 +115,6 @@ sudo raspi-config
 ## Step 6: Install Dependencies
 
 ```bash
-ping bugatti.local
-ssh bugatti@192.168.0.102
 sudo apt-get install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev libgeos-dev git ntp
 ```
 <br/>
