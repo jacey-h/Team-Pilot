@@ -122,7 +122,8 @@ Set joystick axis. We have 4 axis here.
 <img src="https://user-images.githubusercontent.com/81483791/197397592-38d44e51-e921-4523-9093-bfd740f104bc.png"  width="500" height="400"/> 
 <img src="https://user-images.githubusercontent.com/81483791/197397450-465a2782-8411-4bfa-9662-f58d1ebc32bb.png"  width="300" height="220"/> 
 
-OUTPUT:
+OUTPUT:    
+
 <img src="https://user-images.githubusercontent.com/81483791/194764792-723a088f-4cf3-48fc-b8f2-7d7ec72b433e.png"  width="500" height="250"/> 
 
 ### 4. Edit [config.py](http://config.py) file
