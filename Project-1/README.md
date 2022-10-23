@@ -4,7 +4,7 @@
 PiRacer Pro AI Kit      
 
 <img src="https://user-images.githubusercontent.com/81483791/197398272-d278947a-bbae-4ab4-8cfa-6f274efd9cbb.png"  width="380" height="250"/>          
-ß
+
 Racing Robot Kit based on Raspberry Pi
 
 - ### PiRacer Pro AI Kit Assembly Tutorial
