@@ -126,7 +126,7 @@ cd fidl
 vim HelloWorld.fidl
 ```
 
-### [HelloWorld.fidl](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/fidl/Helloworld.fidl)
+ #### [HelloWorld.fidl](HelloWorld-example/project-fidl-gen-test/fidl/HelloWorld.fidl)
 
 
 ```jsx
@@ -224,7 +224,7 @@ If you can’t use generator in Raspberry pi, You can use this zip file.
 
 ```jsx
 cd project-fidl-gen-test/
-wget https://github.com/jacey-h/Pilot-Project-2/raw/main/reference/IPC/example/setup/src-gen.zip
+wget https://github.com/jacey-h/Team-Pilot/raw/main/Project-2/Commonapi-Dbus/HelloWorld-example/project-fidl-gen-test/src-gen.zip
 unzip src-gen.zip
 ```
 
@@ -238,13 +238,13 @@ cd src
 
 Make this  4 files in src directory
 
-#### [HelloWorldClient.cpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/src/HelloWorldClient.cpp)
+#### [HelloWorldClient.cpp](HelloWorld-example/project-fidl-gen-test/src/HelloWorldClient.cpp)
 
-#### [HelloWorldService.cpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/src/HelloWorldService.cpp)
+#### [HelloWorldService.cpp](HelloWorld-example/project-fidl-gen-test/src/HelloWorldService.cpp)
 
-#### [HelloWorldStubImpl.hpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/src/HelloWorldStubImpl.cpp)
+#### [HelloWorldStubImpl.hpp](HelloWorld-example/project-fidl-gen-test/src/HelloWorldStubImpl.hpp)
 
-#### [HelloWorldStubImpl.cpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/src/HelloWorldStubImpl.hpp)
+#### [HelloWorldStubImpl.cpp](HelloWorld-example/project-fidl-gen-test/src/HelloWorldStubImpl.cpp)
 
 
 
@@ -292,7 +292,7 @@ Please check your path.
 
 If you follow every step, your path is same like this.
 
-### [CMakeList.txt](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
+#### [CMakeList.txt](HelloWorld-example/project-fidl-gen-test/CMakeLists.txt)
 
 
 ## In raspberry pi
@@ -344,7 +344,7 @@ mkdir project
 cd ~/project/fidl
 vim DbusData.fidl
 ```
-### [DbusData.fidl](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
+#### [DbusData.fidl](DbusData-example/project/fidl/DbusData.fidl)
     
 
 ### 2. Generate Code
@@ -363,16 +363,20 @@ cd ~/project-fidl-gen-test
 cd ~/project-fidl-gen-test
 ./cgen/commonapi_dbus_generator/commonapi-dbus-generator-linux-x86 ./fidl/DbusData.fidl
 ```
-
+```jsx
+cd project-fidl-gen-test/
+wget https://github.com/jacey-h/Team-Pilot/raw/main/Project-2/Commonapi-Dbus/DbusData-example/project/src-gen.zip
+unzip src-gen.zip
+```
 ### 3. **Write the client and the service application**
 
 ```jsx
 cd ~/project/src
 ```
-### [DbusDataClient.cpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
-### [DbusDataService.cpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
-### [DbusDataStubImpl.hpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
-### [DbusDataStubImpl.cpp](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
+#### [DbusDataClient.cpp](DbusData-example/project/src/DbusDataClient.cpp)
+#### [DbusDataService.cpp](DbusData-example/project/src/DbusDataService.cpp)
+#### [DbusDataStubImpl.hpp](DbusData-example/project/src/DbusDataStubImpl.hpp)
+#### [DbusDataStubImpl.cpp](DbusData-example/project/src/DbusDataStubImpl.cpp)
 
 
 ### 4. Make CMakeList.txt
@@ -381,7 +385,7 @@ cd ~/project/src
 cd ~/project/
 vim CMakeLists.txt
 ```
-### [CMakeLists.txt](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
+### [CMakeLists.txt](DbusData-example/project/CMakeLists.txt)
 
 
 ### 5. Build and run

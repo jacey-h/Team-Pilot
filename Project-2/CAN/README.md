@@ -130,7 +130,7 @@ sudo ip link set can1 up type can bitrate 500000
 ip -details link show can0
 ```
 - ### Arduino Code (Send data)
-[CAN_send_data.ino](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/IPC/example/setup/CMakeLists.txt)
+[CAN_send_data.ino](src/CAN_send_data.ino)
 
 - ### Raspberry pi Code (Recv data)
 
@@ -144,7 +144,7 @@ or
 
 2. Make a python file
 
- [CAN_recv_data.py](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/CAN/example/CAN_recv_data.py)
+ [CAN_recv_data.py](src/CAN_recv_data.py)
 
 OUTPUT:
 

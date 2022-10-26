@@ -31,7 +31,7 @@ If you connect `D0`  ↔  `3`
 
 ### 2. Execute Arduino
 
-[temperature.ino](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/Sensor/example/temperature.ino)
+[temperature.ino](src/temperature.ino)
 
 - - - 
 
@@ -58,7 +58,7 @@ Wheel diameter = 47 mm
 
 ### 2. Execute Arduino
 
-[sensor.ino](https://github.com/jacey-h/Pilot-Project-2/blob/main/reference/Sensor/example/sensor.ino)
+[sensor.ino](src/temperature.ino)
 
 You can check with OLED    
 <img src="https://user-images.githubusercontent.com/81483791/194762080-f6a60c57-7489-4bf4-838c-c0456fbc0455.png"  width="300" height="150"/> 
