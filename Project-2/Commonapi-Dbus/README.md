@@ -342,15 +342,15 @@ OUTPUT:
 ```jsx
 mkdir project
 cd ~/project/fidl
-vim DbusData.fidl
+vim Ipc.fidl
 ```
-#### [DbusData.fidl](DbusData-example/project/fidl/DbusData.fidl)
+#### [Ipc.fidl](IPC-example/project/fidl/Ipc.fidl)
     
 
 ### 2. Generate Code
 
 ```jsx
-cd ~/project/
+cd ~/project
 ```
 
 ```jsx
@@ -358,14 +358,14 @@ source /etc/profile
 ```
 
 ```jsx
-cd ~/project-fidl-gen-test
-./cgen/commonapi-generator/commonapi-generator-linux-x86 -sk ./fidl/DbusData.fidl
-cd ~/project-fidl-gen-test
-./cgen/commonapi_dbus_generator/commonapi-dbus-generator-linux-x86 ./fidl/DbusData.fidl
+cd ~/project
+./cgen/commonapi-generator/commonapi-generator-linux-x86 -sk ./fidl/Ipc.fidl
+cd ~/project
+./cgen/commonapi_dbus_generator/commonapi-dbus-generator-linux-x86 ./fidl/Ipc.fidl
 ```
 ```jsx
-cd project-fidl-gen-test/
-wget https://github.com/jacey-h/Team-Pilot/raw/main/Project-2/Commonapi-Dbus/DbusData-example/project/src-gen.zip
+cd ~/project
+wget https://github.com/jacey-h/Team-Pilot/raw/main/Project-2/Commonapi-Dbus/IPC-example/project/src-gen.zip
 unzip src-gen.zip
 ```
 ### 3. **Write the client and the service application**
@@ -373,10 +373,10 @@ unzip src-gen.zip
 ```jsx
 cd ~/project/src
 ```
-#### [DbusDataClient.cpp](DbusData-example/project/src/DbusDataClient.cpp)
-#### [DbusDataService.cpp](DbusData-example/project/src/DbusDataService.cpp)
-#### [DbusDataStubImpl.hpp](DbusData-example/project/src/DbusDataStubImpl.hpp)
-#### [DbusDataStubImpl.cpp](DbusData-example/project/src/DbusDataStubImpl.cpp)
+#### [IpcClient.cpp](IPC-example/project/src/IpcClient.cpp)
+#### [IpcService.cpp](IPC-example/project/src/IpcService.cpp)
+#### [IpcStubImpl.hpp](IPC-example/project/src/IpcStubImpl.hpp)
+#### [IpcStubImpl.cpp](IPC-example/project/src/IpcStubImpl.cpp)
 
 
 ### 4. Make CMakeList.txt
@@ -385,7 +385,7 @@ cd ~/project/src
 cd ~/project/
 vim CMakeLists.txt
 ```
-### [CMakeLists.txt](DbusData-example/project/CMakeLists.txt)
+### [CMakeLists.txt](IPC-example/project/CMakeLists.txt)
 
 
 ### 5. Build and run
