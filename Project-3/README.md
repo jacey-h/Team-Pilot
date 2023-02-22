@@ -8,18 +8,19 @@ The head unit Qt application running on Raspberry Pi (RPi) alongside the instrum
 This project aims to develop a Head Unit Qt application running on a Raspberry Pi (RPi) alongside the previously developed PiRacer Instrument Cluster Qt application. The Head Unit application will provide additional features like ambient lighting, gear selection, and a media app. The project will use Yocto as the build system for the RPi.
 
 <p align="center">
-  <img width="406" height="426" src="https://user-images.githubusercontent.com/81483791/220689781-7bcc49db-4c2d-4407-8967-9b0880fb0977.png">
-</p>
+  <img width="854" height="352" src="https://user-images.githubusercontent.com/81483791/220690983-bc0886b1-1ecc-4da2-830d-73eeb0a10296.png">
+</p>   
+
 ## **What is Yocto Project?**
 
 The Yocto Project (YP) is an open source collaboration project that helps developers create custom Linux-based systems regardless of the hardware architecture.
 
 The project is including all the tools, libraries, and technologies needed to develop custom Linux-based systems.
 
-<p align="center">
-  <img width="569" height="235" src="https://user-images.githubusercontent.com/81483791/220690983-bc0886b1-1ecc-4da2-830d-73eeb0a10296.png">
-</p>
 
+<p align="center">
+  <img width="609" height="639" src="https://user-images.githubusercontent.com/81483791/220689781-7bcc49db-4c2d-4407-8967-9b0880fb0977.png">
+</p>
 
 ## **Table of Contents**
 - ### [Yocto Project Quick Build](#yocto-project-quick-build)    
@@ -29,35 +30,37 @@ Step 3. [ Creating your custom layer](#step-3-creating-your-custom-layer)
 Step 4. [ Add python](#step-4-add-python)
 - ### [Where To Go Next](#where-to-go-next) 
 
+
+
+
+# Yocto Project Quick Build
 ### **General setup**
 
 **Host machine:** Ubuntu 22.04.1 LTS
 
-**Target machine:** Raspberry Pi 4   Model B   
+**Target machine:** Raspberry Pi 4   Model B     
 
-
-# Yocto Project Quick Build
 
 
 ## **Step 1. Downloading Yocto**
 
-### 1. Build Host Packages
+ 1. Build Host Packages
 
 ```jsx
 sudo apt install bmap-tools zstd liblz4-tool gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm python
 ```
 
-### 2. Make a directory
+ 2. Make a directory
 
 ```jsx
 cd ~
 mkdir yocto && cd yocto
 ```
 
-### 3. Use Git to Clone Poky
+ 3. Use Git to Clone Poky
 
 <p align="center">
-  <img width="508" height="130" src="https://user-images.githubusercontent.com/81483791/220689823-2a2970fa-95ce-4cba-9a19-0caebc7fdb18.png">
+  <img width="1160" height="260" src="https://user-images.githubusercontent.com/81483791/220689823-2a2970fa-95ce-4cba-9a19-0caebc7fdb18.png">
 </p>
 
 We choose a release Codename (such as `kirkstone`)
@@ -66,7 +69,7 @@ We choose a release Codename (such as `kirkstone`)
 git clone -b kirkstone git://git.yoctoproject.org/poky.git
 ```
 
-### 4. Clone raspberry pi and extension
+ 4. Clone raspberry pi and extension
 
 ```jsx
 cd poky
@@ -74,7 +77,7 @@ git clone -b kirkstone git://git.yoctoproject.org/meta-raspberrypi
 git clone -b kirkstone git://git.openembedded.org/meta-openembedded
 ```
 
-### 5. Initialize the Build Environment
+ 5. Initialize the Build Environment
 
 From within the poky directory, run the [oe-init-build-env](https://docs.yoctoproject.org/ref-manual/structure.html#oe-init-build-env) environment setup script to define Yocto Project’s build environment on your build host. 
 
@@ -83,7 +86,7 @@ cd poky
 source oe-init-build-env
 ```
 
-### 6. Add new layer
+ 6. Add new layer
 
 ```jsx
 cd ~/yocto/poky/build/conf
@@ -101,7 +104,7 @@ Add following line:
 /home/username/yocto/poky/meta-openembedded/meta-python \
 ```
 
-### 7. Update MACHINE and change directory
+ 7. Update MACHINE and change directory
 
 ```jsx
 cd ~/yocto/poky/build/conf
@@ -139,7 +142,7 @@ PARALLEL_MAKE = "-j 8"
 IMAGE_FSTYPES = "rpi-sdimg"
 ```
 
-### 8. Edit machine.conf
+ 8. Edit machine.conf
 
 ```jsx
 cd ~/yocto/poky/meta-raspberrypi/conf/machine
@@ -155,7 +158,7 @@ Please Edit `vc4-kms-v3d` to `vc4-fkms-v3d-pi4`
 VC4DTBO ?= "vc4-fkms-v3d-pi4"
 ```
 
-### 9. Build
+ 9. Build
 
 ```jsx
 cd ~/yocto/poky
@@ -171,7 +174,7 @@ In the [Yocto documentation](https://docs.yoctoproject.org/ref-manual/images.ht
 
 ## **Step 2. Writing Os in SD card**
 
-### 1. Find where SD card is
+ 1. Find where SD card is
 
 ```jsx
 sudo fdisk -l
@@ -183,24 +186,24 @@ OUTPUT:
   <img width="593" height="185" src="https://user-images.githubusercontent.com/81483791/220697366-e0dadbc1-4c94-4ba9-a0fd-db97960b5188.png">
 </p>
 
-### 2. umount
+ 2. umount
 
 ```jsx
 umount /dev/sda
 // umount: /dev/sda: not mounted
 ```
 
-### 3. Write image to SD card
+ 3. Write image to SD card
 
 When you done bitbake, You can find `rpi-sdimg` file.
 
 ```jsx
 cd ~/yocto/poky/build/tmp/deploy/images/raspberrypi4-64
-sudo dd if=api-image-raspberrypi4-64-20221227103058.rootfs.rpi-sdimg of=/dev/sda
+sudo dd if=core-image-base-raspberrypi4-64-20221227103058.rootfs.rpi-sdimg of=/dev/sda
 sync
 ```
 
-### 4. Eject and reinsert SD card
+ 4. Eject and reinsert SD card
 
 Now, you can find boot and root 
 
@@ -212,7 +215,7 @@ Now, you can find boot and root
 
 Maybe you have an application or specific set of behaviors you need to isolate. You can create your own general layer using the `bitbake-layers create-layer` command. The tool automates layer creation by setting up a subdirectory with a `layer.conf` configuration file, a `recipes-example` subdirectory that contains an `example.bb` recipe, a licensing file, and a `README`.
 
-### 1. Make a new meta layer
+ 1. Make a new meta layer
 
 ```jsx
 cd ~/yocto/poky
@@ -221,7 +224,7 @@ bitbake-layers create-layer meta-mylayer
 
 `bitbake-layers create-layer meta-<layer_name>`
 
-### 2. Add new layer
+ 2. Add new layer
 
 ```jsx
 cd ~/yocto/poky/build/conf
@@ -237,7 +240,7 @@ Add following line:
 ## **Step 4. Add python**
 To add python, There are 3 solutions here.
 
-### 1. IMAGE_INSTALL
+ 1. IMAGE_INSTALL
 
 - **Solution 1. Using `local.conf` file**
 
@@ -298,7 +301,7 @@ We should change this override syntax. ex) `IMAGE_INSTALL_append` → `IMAGE_INS
 
 Use `:` instead of `_`  
 
-### 2. Build
+ 2. Build
 
 - **Solution 1 & Solution 2**
 
@@ -318,7 +321,7 @@ bitbake my-rpi-image
 ```
 
 
-### 3. Booting and Executing python file
+ 3. Booting and Executing python file
 
 When you do first login, 
 
