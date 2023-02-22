@@ -103,58 +103,11 @@ cd /usr/share/qt5/examples/opengl/hellowindow
 
 ```jsx
 cd ~/yocto/poky/meta-mylayer/recipes-core/images
-```
-
-```jsx
 vim basic-qt5-image.bb
 ```
+#### [basic-qt5-image.bb](example/basic-qt5-image.bb)   
 
-- `basic-qt5-image.bb`
-    
-    ```jsx
-    SUMMARY = "A basic Qt5 dev image"
-    
-    require recipes-core/images/core-image-minimal.bb 
-    
-    QT_BASE = " \
-        qtbase \
-        qtbase-dev \
-        qtbase-mkspecs \
-        qtbase-plugins \
-        qtbase-tools \
-    "
-     
-    QT_PKGS = " \
-        qtwayland \
-        qtwayland-dev \
-        qtwayland-mkspecs \
-        qtconnectivity-dev \
-        qtconnectivity-mkspecs \
-        qtquickcontrols \
-        qtquickcontrols-qmlplugins \
-        qtquickcontrols2 \
-        qtquickcontrols2-dev \
-        qtquickcontrols2-mkspecs \
-        qtquickcontrols2-qmlplugins \
-        qtdeclarative \
-        qtdeclarative-dev \
-        qtdeclarative-mkspecs \
-        qtdeclarative-qmlplugins \
-        qtgraphicaleffects \
-        qtgraphicaleffects-dev \
-        qtmultimedia \
-        qtmultimedia-plugins \
-        qtmultimedia-qmlplugins \
-    "
-     
-    IMAGE_INSTALL += " \
-        ${QT_BASE} \
-        ${QT_PKGS} \
-    "
-     
-    export IMAGE_BASENAME = "basic-qt5-image"
-    ```
-    
+
 
  2. Build
 
@@ -293,48 +246,17 @@ Now, we can make our simple qt file using `bitbake`.
 
 ```jsx
 cd ~/yocto/poky/meta-mylayer/recipes-example
-mkdir qt-example
-cd qt-example
-```
-
-```jsx
+mkdir qt-example && cd qt-example
 vim simple.bb
 ```
 
-- `simple.bb`
-    
-    ```jsx
-    DESCRIPTION = "QT simple application"
-    
-    LICENSE = "CLOSED"
-    inherit qmake5
-    DEPENDS = " qtbase qtquickcontrols2"
-    
-      
-    SRC_URI += "file://simple.pro \
-                file://qml.qrc \
-                file://main.cpp \
-                file://main.qml \
-                file://simple.pro.user \
-                file://MainForm.ui.qml \
-                file://deployment.pri"
-    S = "${WORKDIR}"
-    
-    do_configure() {
-    
-        qmake ${S}/simple.pro
-    }
-    
-    do_install(){
-        install -d ${D}${bindir}
-        install -m 0755 simple ${D}${bindir}
-    }
-    ```
+#### [simple.bb](example/simple.bb)   
+
     
 
 ### 2. Download and unzip files
 
-[files.zip](QT%2038c80f0661004acc972d78903529f9b9/files.zip)
+#### [files.zip](example/files.zip)
 
 unzip this file in this directory.
 
