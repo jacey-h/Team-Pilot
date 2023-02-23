@@ -1,57 +1,111 @@
-# Commonapi-dbus
+# How to use Commonapi-Dbus on yocto
 
+    
+    
 
-- Contents
-
-- Reference
+ - ### Reference
     
-    [meta-ivi](https://github.com/GENIVI/meta-ivi) 
-    
-    [meta-ivi/common-api](https://ggangjo.tistory.com/211)
-    
-    [dbus_1.10.10](http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-core/dbus/dbus_1.10.10.bb?h=morty)
-    
+    [meta-ivi](https://github.com/GENIVI/meta-ivi)    
     [systemd](https://velog.io/@markyang92/yocto-meta-raspberrypi)
     
 
-### Step 1. Download `meta-ivi` file
+- ### Contents  
+ 1. [Select commonapi version](#select-commonapi-version)  
+ 2. [Using Commonapi-Dbus](#using-commonapi-dbus)      
+        Step 1.[ Change dbus version (Latest)](#step-1-change-dbus-version-latest)      
+        Step 2.[ Download meta-ivi ]()     
+        Step 3.[ Change version](#step-3-change-version)     
+        Step 4.[ Add build system](#step-4-add-build-system)    
+        Step 5.[ Edit local.conf file](#step-5-edit-localconf-file)    
+        Step 6.[ Change commonapi version (Latest)](#step-6-change-commonapi-version-latest)    
+        Step 7.[ Make own image](#step-7-make-own-image)    
+        Step 8.[ BitBake](#step-8-bitbake)    
+
+
+
+## **Selecting commonapi version**
+
+If you want to use Commonapi-Dbus, I propose to match the version.
+
+1. **Old Version**
+- Library
+
+capicxx-core-runtime [3.1.12.6](https://github.com/COVESA/capicxx-core-runtime/releases/tag/3.1.12.6)
+
+capicxx-dbus-runtime [3.1.12.11](https://github.com/COVESA/capicxx-dbus-runtime/releases/tag/3.1.12.11)
+
+dbus [1.10.10](https://dbus.freedesktop.org/releases/dbus/)
+
+- Code generator
+
+commonapi-generator [3.1.12.4](https://github.com/COVESA/capicxx-core-tools/releases/tag/3.1.12.4)
+
+commonapi-bus-generator [3.1.12.2](https://github.com/COVESA/capicxx-dbus-tools/releases/tag/3.1.12.2)
+
+2. **Latest Version (When to write 01.02.2023)**
+- Library
+
+capicxx-core-runtime [3.2.0](https://github.com/COVESA/capicxx-core-runtime/releases/tag/3.2.0)
+
+capicxx-dbus-runtime [3.2.0](https://github.com/COVESA/capicxx-dbus-runtime/releases/tag/3.2.0)
+
+dbus [1.14.0](https://dbus.freedesktop.org/releases/dbus/)
+
+- Code generator
+
+commonapi-generator [3.2.0.1](https://github.com/COVESA/capicxx-core-tools/releases/tag/3.2.0.1)
+
+commonapi-bus-generator [3.2.0](https://github.com/COVESA/capicxx-dbus-tools/releases/tag/3.2.0)     
+
+----
+
+
+## **Using Commonapi-Dbus**
+
+1. Change dbus version (Latest)
+
+To use dbus-1.14.0 version, change your [dbus version](http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-core/dbus?h=kirkstone-next).
+
+You can check your dbus version here.
+
+```jsx
+cd ~/yocto/poky/meta/recipes-core/dbus
+open .
+```
+
+If your dbus is not 1.14.0 verison, You should change like this.
+
+|  |  |
+| --- | --- |
+| <img src="https://user-images.githubusercontent.com/81483791/221005536-fe43c83e-036e-4b5b-92db-1697d30c6f8c.png"  width="460" height="185"/> |  <img src="https://user-images.githubusercontent.com/81483791/221005538-df1303b8-c920-4eed-87db-e3db229e73b7.png"  width="578" height="185"/> |
+
+2. Download `meta-ivi`
 
 ```jsx
 cd ~/yocto/poky
-wget
-unzip 
+git clone https://github.com/GENIVI/meta-ivi.git
 ```
 
-- *If you want to git clone from official site.*
-    
-    ### Step 1. git clone
-    
-    ```jsx
-    cd ~/yocto/poky
-    git clone https://github.com/GENIVI/meta-ivi.git
-    ```
-    
-    ### Step 2. Change version
-    
-    ```jsx
-    cd ~/yocto/poky/meta-ivi/meta-ivi/conf
-    vim layer.conf
-    ```
-    
-    Edit following line.
-    
-    ```jsx
-    LAYERSERIES_COMPAT_ivi = "kirkstone"
-    ```
-    
-    This version has old override syntax.
-    
-    We should change this override syntax. ex) `IMAGE_INSTALL_append` → `IMAGE_INSTALL:append`
-    
-    From kirkstone version, use `:` instead of `_`  .
-    
+3. Change version
 
-### Step 2.  Add build system
+```jsx
+cd ~/yocto/poky/meta-ivi/meta-ivi/conf
+vim layer.conf
+```
+
+Edit following line.
+
+```jsx
+LAYERSERIES_COMPAT_ivi = "kirkstone"
+```
+
+This version has old override syntax.
+
+We should change this override syntax. ex) `IMAGE_INSTALL_append` → `IMAGE_INSTALL:append`
+
+From kirkstone version, use `:` instead of `_`  .
+
+4.  Add build system
 
 ```jsx
 cd ~/yocto/poky/build/conf
@@ -61,10 +115,10 @@ vim bblayers.conf
 Add following line:
 
 ```jsx
-/home/**username**/yocto/poky/meta-ivi/meta-ivi \  
+/home/username/yocto/poky/meta-ivi/meta-ivi \  
 ```
 
-### Step 3. Edit local.conf file
+5. Edit local.conf file
 
 ```jsx
 cd ~/yocto/poky/build/conf
@@ -82,158 +136,64 @@ VIRTUAL-RUNTIME_initscripts = ""
 
 It makes that we use `systemd` instead of `sysvinit` .
 
-### Step 4. Change dbus version.
-
-For using commonapi dbus, We should use matching version.
+6. Change commonapi version (Latest)
 
 ```jsx
-~/yocto_re/poky/meta-ivi/meta-ivi/recipes-extended/common-api
-open .
+cd ~/yocto/poky/meta-ivi/meta-ivi/recipes-extended/common-api
 ```
 
-In this directory,  you can find this .bb file.
+In this directory, We will change this 2 files.
 
-![Untitled](Commonapi-dbus%207cbc82efde7348e5a81d2b62189f657b/Untitled.png)
+Please rename it
 
-Also, you can check commonapi version.
+`common-api-c++_3.1.12.6.bb` → `common-api-c++_3.2.0.bb`
 
-`common-api-c++_3.1.12.6.bb`
-
-`common-api-c++-dbus_3.1.12.11.bb`
-
-I already matched this version in Project 2.
-
-capicxx-core-runtime 3.1.12.6
-
-capicxx-dbus-runtime 3.1.12.11
-
-dbus-1.10.10
-
-So, We need to use dbus 1.10.10 version.
-
-But in kirkstone poky directory, there has dbus 1.14.0 version.
-
-![Untitled](Commonapi-dbus%207cbc82efde7348e5a81d2b62189f657b/Untitled%201.png)
-
-If you want to know more details, you can check [here](http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-core/dbus/dbus_1.10.10.bb?h=morty).
-
-**Then, How to downgrade dbus version?**
-
-I already change dbus directory for changing version. So we just download this file.
+`common-api-c++-dbus_3.1.12.11.bb` → `common-api-c++-dbus_3.2.0.bb`
 
 ```jsx
-cd ~/yocto/poky/meta/recipes-core
-rm -rf dbus
-wget 
-unzip
+vim common-api-c++_3.2.0.bb
 ```
 
-- *If you want to know how to change version.*
-    
-    dbus1.10.10 used [yocto morty](http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-core/dbus?h=morty).
-    
-    ### 1. make new dbus dirctory
-    
-    ```jsx
-    cd ~/yocto/poky/meta/recipes-core/dbus
-    rm -rf *
-    ```
-    
-    ![Untitled](Commonapi-dbus%207cbc82efde7348e5a81d2b62189f657b/Untitled%202.png)
-    
-    Make correctly same file.
-    
-    ### 2. Edit override syntax
-    
-    This version is too old. We should change `_` → `:`
-    
-    ex) `FILES_${PN}` → `FILES:${PN}`
-    
-    ### 3.  Add dbus patch
-    
-    ```jsx
-    cd ~/yocto/poky/meta/recipes-core/dbus/dbus
-    ```
-    
-    Please unzip this file and add `yocto/poky/meta/recipes-core/dbus/dbus` here.
-    
-    [dbus.zip](Commonapi-dbus%207cbc82efde7348e5a81d2b62189f657b/dbus.zip)
-    
-    This file is form `meta-ivi/meta-ivi/recipes-core-ivi/dbus` .
-    
-    If you want to check this file, you should `git clone https://github.com/GENIVI/meta-ivi.git`
-    
-    ```jsx
-    cd ~/yocto/poky/meta/recipes-core/dbus
-    vim dbus_1.10.10.bb
-    ```
-    
-    Add following line in SRC_URI
-    
-    ```jsx
-    file://capi-dbus-add-send-with-reply-set-notify.patch \
-    file://capi-dbus-add-support-for-custom-marshalling.patch \
-    file://0001-dbus-fix-possible-uninitialized-variable.patch \
-    ```
-    
-    - My case
-        
-        ```jsx
-        SRC_URI = "http://dbus.freedesktop.org/releases/dbus/dbus-${PV}.tar.gz \
-                   file://tmpdir.patch \
-                   file://dbus-1.init \
-                   file://os-test.patch \
-                   file://clear-guid_from_server-if-send_negotiate_unix_f.patch \
-                   file://0001-configure.ac-explicitely-check-stdint.h.patch \
-                   file://capi-dbus-add-send-with-reply-set-notify.patch \
-            	   file://capi-dbus-add-support-for-custom-marshalling.patch \
-        "
-        ```
-        
-    
-    ### 4. Edit patch file
-    
-    ```jsx
-    cd ~/yocto/poky/meta/recipes-core/dbus/dbus
-    vim capi-dbus-add-send-with-reply-set-notify.patch
-    
-    ```
-    
-    ```jsx
-    vim capi-dbus-add-support-for-custom-marshalling.patch
-    
-    ```
-    
-    ```jsx
-    vim 0001-dbus-fix-possible-uninitialized-variable.patch 
-    ```
-    
-    Please Add this line. 
-    
-    ```jsx
-    Upstream-Status: Backport [from dbus-1.10]
-    ```
-    
+#### [common-api-c++_3.2.0.bb](example/common-api-c%2B%2B_3.2.0.bb)   
 
-### Step 5. Make bb file
+ 
+
+I only change this line.
+
+`SRCREV = "89720d3c63bbd22cbccc80cdc92c2f2dd20193ba"`
+
+<p align="center">
+  <img width="606" height="234" src="https://user-images.githubusercontent.com/81483791/221005542-06f64c71-9860-4903-af47-fa1ce4a10a87.png">
+</p>
+
+I want to change release version, so I just modified version commit. 
 
 ```jsx
-cd ~/yocto/poky/build/meta-mylayer/recipes-core/images
+vim common-api-c++-dbus_3.2.0.bb
+```
+#### [common-api-c++-dbus_3.2.0.bb](example/common-api-c%2B%2B-dbus_3.2.0.bb)   
+    
+
+    
+
+7. Make own image
+
+```jsx
+cd ~/yocto/poky/meta-mylayer/recipes-core/images
 vim api-test.bb
 ```
 
-- `api-test.bb`
-    
-    ```jsx
-    SUMMARY = "A basic Raspberry pi image"
-    
-    require recipes-core/images/core-image-minimal.bb 
-    
-    IMAGE_INSTALL += " common-api-c++ common-api-c++-dbus"
-    export IMAGE_BASENAME = "api-test"
-    ```
-    
+#### [api-test.bb](example/api-test.bb)   
+   
 
-![Untitled](Commonapi-dbus%207cbc82efde7348e5a81d2b62189f657b/Untitled%203.png)
+8. Bitbake
 
-We can check `/root/usr/lib`
+```jsx
+bitbake api-test
+```
+
+- Trouble Shooting
+    
+    If you have have any other error form meta-ivi,
+    
+    I recommend to delete the file or directory that error occured

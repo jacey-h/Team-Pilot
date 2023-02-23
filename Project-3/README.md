@@ -29,6 +29,8 @@ Step 2. [ Writing Os in SD card](#step-2-writing-os-in-sd-card)
 Step 3. [ Creating your custom layer](#step-3-creating-your-custom-layer)  
 Step 4. [ Add python](#step-4-add-python)
 - ### [Where To Go Next](#where-to-go-next) 
+[How to use QT on yocto](QT/README.md)    
+[How to use Commonapi-Dbus on yocto](Commonapi/README.md)
 
 
 
@@ -351,3 +353,6 @@ python3 start.py
 Now, We can create a simple OS that can be booted.
 
 Next step is how to run head unit Qt application on yocto based OS.
+
+### [How to use QT on yocto](QT/README.md)    
+### [How to use Commonapi-Dbus on yocto](Commonapi/README.md)

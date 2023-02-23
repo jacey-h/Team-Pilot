@@ -4,12 +4,9 @@
 
 - ### Reference
     
-    [Build Rpi4 Qt5 using Yocto project](http://www.yocto.co.kr/2017/03/yocto-morty-22-qtv57.html)
-    
-    [Hacking Raspberry Pi 4 with Yocto](https://lancesimms.com/RaspberryPi/HackingRaspberryPi4WithYocto_Part5.html)
-    
-    [Build Qt SDK1](https://makersweb.net/embedded/12540)
-    
+    [Build Rpi4 Qt5 using Yocto project](http://www.yocto.co.kr/2017/03/yocto-morty-22-qtv57.html)    
+    [Hacking Raspberry Pi 4 with Yocto](https://lancesimms.com/RaspberryPi/HackingRaspberryPi4WithYocto_Part5.html)   
+    [Build Qt SDK1](https://makersweb.net/embedded/12540)   
     [Build Qt SDK2](https://makersweb.net/embedded/12845?search_target=title_content&search_keyword=sdk)
     
 - ### Contents
@@ -30,7 +27,7 @@ cd ~/yocto/poky
 git clone -b kirkstone https://github.com/meta-qt5/meta-qt5
 ```
 
- 2. Add new layer
+ 2. Create new layer
 
 ```jsx
 cd ~/yocto/poky/build/conf
@@ -43,7 +40,7 @@ Add following line:
 /home/username/yocto/poky/meta-qt5 \  
 ```
 
- 3. Add qtbase example package
+ 3. Modify your configuration file
 
 ```jsx
 cd ~/yocto/poky/build/conf
@@ -56,7 +53,7 @@ Add this line:
 CORE_IMAGE_EXTRA_INSTALL:append = " qtbase-examples"
 ```
 
- 4. Make a directory and .bbappend file
+ 4. Make a directory and create .bbappend file
 
 ```jsx
 cd ~/yocto/poky/meta-mylayer
@@ -134,7 +131,7 @@ Add this line top of file:
 inherit populate_sdk populate_sdk_qt5
 ```
 
- 4. Modify local.config
+ 4. Modify your configuration file
 
 ```jsx
 cd ~/yocto/poky/build/conf
