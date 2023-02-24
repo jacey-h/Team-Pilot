@@ -31,35 +31,5 @@ Item {
         source: Qt.resolvedUrl(root.dialCursor)
 
     }
-//    Image {
-//        id: img
-//        source: Qt.resolvedUrl(root.fillImage)
-//        visible: false
-//    }
-
-//    Canvas {
-//        id: mask
-//        anchors.fill: img
-
-//        property double angle: 45
-//        onPaint: {
-//            var ctx = getContext("2d");
-//            var centerX = width / 2;
-//            var centerY = height / 2;
-
-//            ctx.beginPath();
-//            ctx.fillStyle = "black";
-//            ctx.moveTo(centerX, centerY);
-//            ctx.arc(centerX, centerY, width / 4, (Math.PI) * (1 + angle / 180), 0, false);
-//            ctx.lineTo(centerX, centerY);
-//            ctx.fill();
-//        }
-//    }
-
-//    OpacityMask {
-//        anchors.fill: img
-//        source: img
-//        maskSource: mask
-//    }
 
 }

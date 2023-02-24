@@ -7,11 +7,7 @@ import QtQuick.Layouts 1.2
 import QtQml 2.0
 
 WaylandOutput {
-    signal prndSignal(int msg)
     id: prnd
-
-//    property alias surfaceArea: headbackground
-//    property alias text: t.text
     property alias screen: winHead.screen
     property int colorIndex: 4
     sizeFollowsWindow: true
@@ -36,47 +32,8 @@ WaylandOutput {
             id : root
             width: parent.width
             height: parent.height*0.7
-
             color:"black"
 
-
-//            StackView {
-//                id: stack
-//                initialItem: mapPage
-//                anchors.fill: parent
-
-//                pushEnter: Transition {
-//                    PropertyAnimation {
-//                        property: "opacity"
-//                        from: 0
-//                        to: 1
-//                        duration: 200
-//                    }
-//                }
-//                pushExit: Transition {
-//                        PropertyAnimation {
-//                            property: "opacity"
-//                            from: 1
-//                            to:0
-//                            duration: 200
-//                        }
-//                    }
-//                popEnter: Transition {
-//                    PropertyAnimation {
-//                        property: "opacity"
-//                        from: 0
-//                        to:1
-//                        duration: 200
-//                    }
-//                }
-//                popExit: Transition {
-//                    PropertyAnimation {
-//                        property: "opacity"
-//                        from: 1
-//                        to:0
-//                        duration: 200
-//                    }
-//                }
                 TopBar {
                     id: topBar
                 }

@@ -24,12 +24,6 @@ WaylandOutput {
 
         }
 
-//        Rectangle {
-//            id : root
-//            width: parent.width
-//            height: parent.height*0.7
-
-//            color:"black"
             PDC {
             }
 
@@ -52,8 +46,8 @@ WaylandOutput {
                 id : topbar
                 y : 7
                 anchors.horizontalCenter: parent.horizontalCenter
-                temperature: 5
-                humidity : 25
+                temperature: 25
+                humidity : 5
 
             }
             ICPrnd {
@@ -69,6 +63,5 @@ WaylandOutput {
             }
 
 
-//        }
     }
 }

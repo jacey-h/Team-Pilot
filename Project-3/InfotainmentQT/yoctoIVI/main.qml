@@ -17,6 +17,7 @@ WaylandCompositor{
     }
 
     HeadUnit {
+        signal prndSignal(int msg)
         id: headunitRight
         compositor: comp
         screen: Qt.application.screens[1]

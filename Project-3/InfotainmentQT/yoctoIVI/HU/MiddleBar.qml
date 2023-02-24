@@ -41,15 +41,6 @@ Rectangle {
 
         }
         Rectangle {
-            function rBtnClicked(idx) {
-                prndSignal(idx);
-                stack.push(page2);
-            }
-            function restBtnClicked(idx) {
-                prndSignal(idx);
-                stack.pop();
-                Qt.quit();
-            }
 
             id: leftScreen
             Layout.alignment: Qt.AlignVCenter | Qt.Alignleft
@@ -60,29 +51,30 @@ Rectangle {
             MyButton {
                 id: p
                 text: "P"
-//                        onClicked: restBtnClicked(0)
-                onClicked: stack.pop()
-
+                onClicked:
+                {
+                    stack.pop()
+                    prndSignal(0)
+                }
             }
             MyButton {
                 id: r
                 anchors.top : p.bottom
                 text: "R"
-//                        onClicked: rBtnClicked(1)
-                onClicked: stack.push(cameraPage)
+                onClicked: prndSignal(1)
 
             }
             MyButton {
                 id: n
                 anchors.top : r.bottom
                 text: "N"
-                onClicked: stack.pop()
+                onClicked: prndSignal(2)
             }
             MyButton {
                 id: d
                 anchors.top : n.bottom
                 text: "D"
-                onClicked: stack.pop()
+                onClicked: prndSignal(3)
             }
 
 
@@ -149,22 +141,6 @@ Rectangle {
                         id: mapImage
                         source: "images/map.jpg"
                         anchors.fill: parent
-                    }
-                }
-                Rectangle {
-                    id: cameraPage
-
-                    //anchors.fill: parent
-                    Camera {
-                        id: camera
-                    }
-                    VideoOutput {
-                        id: videoOutput
-                        anchors.left: parent.left
-                        anchors.bottom: parent.bottom
-                        anchors.top: parent.top
-                        source: camera
-                        focus: visible
                     }
                 }
 

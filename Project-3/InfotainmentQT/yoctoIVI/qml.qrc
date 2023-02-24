@@ -41,7 +41,6 @@
         <file>HU/images/toolbutton.sci</file>
         <file>HU/HeadUnit.qml</file>
         <file>HU/Label.qml</file>
-        <file>HU/mainHu.qml</file>
         <file>HU/MyButton.qml</file>
         <file>HU/Background.qml</file>
         <file>HU/TopBar.qml</file>
