@@ -2,13 +2,13 @@
 
 ### **Table of Contents**
 
-- ### [WIFI with systemd](#wifi-with-systemd) 
-- ### [CAN](#can)
-- ### [I2C](#i2c)
-- ### [Auto login](#auto-login)
-- ### [Auto Start](#auto-start)
-- ### [Using joystick](#using-joystick)
-- ### [Splash](#splash)
+- [WIFI with systemd](#wifi-with-systemd) 
+- [CAN](#can)
+- [I2C](#i2c)
+- [Auto login](#auto-login)
+- [Auto Start](#auto-start)
+- [Using joystick](#using-joystick)
+- [Splash](#splash)
 
 ## WIFI with systemd
 
