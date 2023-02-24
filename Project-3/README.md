@@ -30,8 +30,8 @@ Step 3. [ Creating your custom layer](#step-3-creating-your-custom-layer)
 Step 4. [ Add python](#step-4-add-python)
 - ### [Where To Go Next](#where-to-go-next) 
 [How to use QT on yocto](QT/README.md)    
-[How to use Commonapi-Dbus on yocto](Commonapi/README.md)
-
+[How to use Commonapi-Dbus on yocto](Commonapi/README.md)  
+[Adding other functions (WIFI, CAN, I2C, Auto-start etc)](Others/README.md)   
 
 
 
@@ -356,3 +356,4 @@ Next step is how to run head unit Qt application on yocto based OS.
 
 ### [How to use QT on yocto](QT/README.md)    
 ### [How to use Commonapi-Dbus on yocto](Commonapi/README.md)
+### [Adding other functions (WIFI, CAN, I2C, Auto-start etc)](Others/README.md)

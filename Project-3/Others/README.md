@@ -1,11 +1,14 @@
 # Adding other functions (WIFI, CAN, I2C, Auto-start etc)
 
 ### **Table of Contents**
-- ### [WIFI with systemd](#wifi-with-systemd)   
-- ### [CAN](#can) 
-- ### [I2C](#i2c) 
-- ### [Auto login](#auto-login) 
-- ### [Splash](#splash) 
+
+- ### [WIFI with systemd](#wifi-with-systemd) 
+- ### [CAN](#can)
+- ### [I2C](#i2c)
+- ### [Auto login](#auto-login)
+- ### [Auto Start](#auto-start)
+- ### [Using joystick](#using-joystick)
+- ### [Splash](#splash)
 
 ## WIFI with systemd
 
@@ -196,6 +199,208 @@ local_autologin () {
 
 ROOTFS_POSTPROCESS_COMMAND += "local_autologin; "
 ```
+## Auto Start
+
+
+If you want the program to run automatically after booting,
+
+You can use the script file to run the desired program.
+
+1. Create a script file
+
+```jsx
+cd ~/yocto/poky/meta-jacey/recipes-example/qt5
+mkdir files && cd files
+vim qt5-env.sh
+```
+#### [qt5-env.sh](Auto-start/qt5-env.sh)   
+
+
+    
+
+```jsx
+export QT_QPA_EGLFS_KMS_CONFIG=/etc/kms.conf
+export QT_QPA_EGLFS_INTEGRATION=eglfs_kms
+export QT_QPA_PLATFORM=eglfs
+export QT_QPA_EGLFS_KMS_ATOMIC=1
+```
+
+This is a pre-set part to run the QT app.
+
+If you ran the QT app with '`-platform eglfs`',
+
+By setting '`export QT_QPA_PLATFORM=glfs`' in advance,
+
+There is no need to set up the platform every time you run it.
+
+```jsx
+export $(dbus-launch)
+```
+
+Commonapi Dbus is set up for service and client communication.
+
+If this is not set up in advance, the following error occurs.
+
+`Unable to autolaunch a dbus-daemon without a $DISPLAY for x11` 
+
+```jsx
+ip link set can0 up type can bitrate 500000
+```
+
+Set the bitrate so that CAN communication can be performed immediately after booting.
+
+```jsx
+# /usr/bin/IpcService & /usr/bin/IpcClient
+```
+
+Set the desired program execution as follows.
+
+2. Create a configuration file   
+
+To use a dual monitor, it sets the HDMI output connected to the raspberry pi.
+
+If you use one monitor, you can skip it.
+
+```jsx
+cd ~/yocto/poky/meta-jacey/recipes-example/qt5
+vim kms.conf
+```
+#### [kms.conf](Auto-start/kms.conf)   
+
+
+
+3. Create an image file
+
+```jsx
+cd ~/yocto/poky/meta-jacey/recipes-example/qt5
+vim qt5-env.bb
+```
+#### [qt5-env.bb](Auto-start/qt5-env.bb)   
+
+    
+
+This image file allows you to build scripts and conf files on ${D}${sysconfdir} in the OS.
+
+```jsx
+Variable name	        Definition	        Typical value
+-------------  --------------------    --------------------
+prefix	       /usr                    /usr
+base_prefix	   (empty)	               (empty)
+exec_prefix	   ${base_prefix}	         (empty)
+base_bindir    ${base_prefix}/bin	     /bin
+base_sbindir	 ${base_prefix}/sbin	   /sbin
+base_libdir	   ${base_prefix}/lib	     /lib
+datadir        ${prefix}/share	       /usr/share
+sysconfdir	   /etc	                   /etc
+localstatedir	 /var	                   /var
+infodir        ${datadir}/info	       /usr/share/info
+mandir         ${datadir}/man	         /usr/share/man
+docdir         ${datadir}/doc	         /usr/share/doc
+servicedir	   /srv	                   /srv
+bindir         ${exec_prefix}/bin	     /usr/bin
+sbindir        ${exec_prefix}/sbin	   /usr/sbin
+libexecdir	   ${exec_prefix}/libexec	 /usr/libexec
+libdir         ${exec_prefix}/lib	/usr /lib
+includedir	   ${exec_prefix}/include	 /usr/include
+palmtopdir	   ${libdir}/opie	         /usr/lib/opie
+palmqtdir	     ${palmtopdir}	         /usr/lib/opie
+```
+
+## Using Joystick
+1. Make custom packagegroup
+
+```jsx
+cd ~/yocto/poky/meta-mylayer/recipes-core
+mkdir packagegroups
+vim 
+packagegroup-seame-devel.bb
+```
+#### [packagegroup-seame-devel.bb](Joystick/packagegroup-seame-devel.bb)   
+
+
+2. Make for  piracer image
+
+```jsx
+cd ~/yocto/poky/meta-jacey/recipes-example
+mkdir piracer && cd piracer
+```
+
+```jsx
+vim rcexam.bb
+```
+#### [rcexam.bb](Joystick/rcexam.bb)
+
+
+```jsx
+mkdir files && cd files
+```
+
+```jsx
+vim rc_example.py
+```
+#### [rc_example.py](Joystick/rc_example.py)
+
+
+3.  Modify your custom image
+
+```jsx
+IMAGE_INSTALL:append = " packagegroup-seame-devel packagegroup-core-boot rcexam"
+# make extra space
+IMAGE_ROOTFS_EXTRA_SPACE = "148576"
+```
+
+4. pip3 install
+
+After booting,
+
+```jsx
+pip3 install piracer-py
+```
+
+```jsx
+cd /usr/bin
+python3 rc_example.py
+```
+
+For automatic execution, you can add the `rc_example.py` program execution setting to auto-start.
+
+```jsx
+cd ~/yocto/poky/meta-jacey/recipes-example/qt5
+mkdir files && cd files
+vim qt5-env.sh
+```
+
+```jsx
+cd /usr/bin
+IpcClient & yoctoIVI &
+# If you already have piracer-py library 
+if python3 -c 'import pkgutil; exit(not pkgutil.find_loader("piracer"))'; then
+    cd /usr/bin
+    python3 rc_example.py 
+else
+    while :
+    do
+# Checking wifi connection 
+        echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+  
+        if [ $? -eq 0 ]; then
+          pip3 install piracer-py
+          reboot
+          break
+        else
+          echo "Offline"
+        fi
+    done
+    cd /usr/bin
+    python3 rc_example.py 
+fi
+```
+
+**Important!**
+
+After the library is installed with '`pip3 install piracer-py`',
+
+The Raspberry Pi must be safely rebooted or shut down to avoid damaging the file.   
 
 ## Splash
 
