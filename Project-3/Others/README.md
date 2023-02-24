@@ -362,7 +362,7 @@ cd /usr/bin
 python3 rc_example.py
 ```
 
-For automatic execution, you can add the `rc_example.py` program execution setting to auto-start.
+For automatic execution, you can add the `rc_example.py` program execution setting to [auto-start](#auto-start).
 
 ```jsx
 cd ~/yocto/poky/meta-jacey/recipes-example/qt5

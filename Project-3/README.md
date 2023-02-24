@@ -32,6 +32,7 @@ Step 4. [ Add python](#step-4-add-python)
 [How to use QT on yocto](QT/README.md)    
 [How to use Commonapi-Dbus on yocto](Commonapi/README.md)  
 [Adding other functions (WIFI, CAN, I2C, Auto-start etc)](Others/README.md)   
+[Making your own Infotainment QT app](InfotainmentQT/README.md)
 
 
 
@@ -357,3 +358,4 @@ Next step is how to run head unit Qt application on yocto based OS.
 ### [How to use QT on yocto](QT/README.md)    
 ### [How to use Commonapi-Dbus on yocto](Commonapi/README.md)
 ### [Adding other functions (WIFI, CAN, I2C, Auto-start etc)](Others/README.md)
+### [Making your own Infotainment QT app](InfotainmentQT/README.md)
