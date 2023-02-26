@@ -9,7 +9,7 @@ Now it's time to create your own Infotainment QT app!
 It was created by referring to the QT example file, and details can be found [here](https://doc.qt.io/QtIVI/qtivi-ivicore-qface-tutorial-example.html).
 
 <p align="center">
-  <img width="1278" height="360" src="https://user-images.githubusercontent.com/81483791/221193073-cdffddf6-6e70-4c4a-b491-62ca2c9afc81.png">
+  <img width="1123" height="360" src="https://user-images.githubusercontent.com/81483791/221198961-b21376b8-85c6-4656-aab3-fb6ee8de5538.png">
 </p>
 
 ```jsx
@@ -47,11 +47,11 @@ It was created by referring to the QT example file, and details can be found [he
 ## [Head Unit](yoctoIVI/HU/HeadUnit.qml)
 
 <p align="center">
-  <img width="1273" height="490" src="https://user-images.githubusercontent.com/81483791/221193076-b18dff00-62f5-4db4-9326-dfb64b313fcb.png">
+  <img width="1273" height="490" src="https://user-images.githubusercontent.com/81483791/221198943-9481ea97-1989-46fe-aeae-09a0062399fd.png">
 </p>
 
 <p align="center">
-  <img width="1273" height="490" src="https://user-images.githubusercontent.com/81483791/221193081-56590d8d-a806-4633-a439-de148b1fbe96.png">
+  <img width="1273" height="490" src="https://user-images.githubusercontent.com/81483791/221198950-b3f6631d-59a6-4d63-a3ac-309f770966e9.png">
 </p>
 
 ```jsx
@@ -118,6 +118,7 @@ WaylandCompositor{
     }
 
     HeadUnit {
+        signal prndSignal(int msg)
         id: headunitRight
         compositor: comp
         screen: Qt.application.screens[1]
