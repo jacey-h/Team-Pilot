@@ -113,33 +113,22 @@ donkey createjs
 - Button Map    
 Set joystick button name.    
 
-<p align="center">
   <img width="486" height="259" src="https://user-images.githubusercontent.com/81483791/197397574-a809ec35-74ec-46b6-9389-e5c08760d17d.png">
-</p> 
 
 -  Axis Map    
-Set joystick axis. We have 4 axis here.
- 
-<p align="center">
-  <img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
-</p>
+  Set joystick axis. We have 4 axis here.   
+<img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
 
 - Control Map
 
-<p align="center">
   <img width="472" height="442" src="https://user-images.githubusercontent.com/81483791/197397592-38d44e51-e921-4523-9093-bfd740f104bc.png">
-</p> 
 
-<p align="center">
   <img width="255" height="193" src="https://user-images.githubusercontent.com/81483791/197397450-465a2782-8411-4bfa-9662-f58d1ebc32bb.png">
-</p> 
 
 OUTPUT:    
 
  
-<p align="center">
   <img width="429" height="180" src="https://user-images.githubusercontent.com/81483791/194764792-723a088f-4cf3-48fc-b8f2-7d7ec72b433e.png">
-</p> 
 
 4. Edit [config.py](http://config.py) file
 

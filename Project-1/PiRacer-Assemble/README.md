@@ -13,7 +13,7 @@
 [Piracer_pro_ai_kit-en2.pdf](https://www.waveshare.com/w/upload/a/a2/Piracer_pro_ai_kit-en2.pdf)
  
 <p align="center">
-  <img width="500" height="300" src="https://user-images.githubusercontent.com/81483791/194764230-e8d5ad55-4a40-456c-b0b6-a7f33b4bc8a9.png">
+  <img width="726" height="507" src="https://user-images.githubusercontent.com/81483791/224435348-8ee14ad6-7c99-4c07-b302-07cc4cb453d2.png">
 </p> 
 
 
@@ -28,17 +28,16 @@
 
 - Choose OS → others → upload .img file
 
-<p align="center">
   <img width="453" height="304" src="https://user-images.githubusercontent.com/81483791/224414736-7f97db90-ea0f-4e32-b342-d8d263f11e0c.png">
-</p>  
+
 
 We already downloaded .img file first step
 
 - Set up Wifi , SSH 
 
-<p align="center">
+
   <img width="453" height="304" src="https://user-images.githubusercontent.com/81483791/224414829-07a51751-2488-48f9-bae1-5e7ce8b37a52.png">
-</p>  
+
 
 You can change your hostname and username , password this step.
 
@@ -62,9 +61,7 @@ ssh -Y pi@10.12.248.219  # username@ip
 sudo raspi-config
 ```
   
-<p align="center">
   <img width="459" height="287" src="https://user-images.githubusercontent.com/81483791/194764300-4a482b35-f2db-47e4-885e-ceaa9c738f16.png">
-</p>   
 
 - enable `Interfacing Options` - `I2C`
 - enable `Interfacing Options` - `SSH`
@@ -168,7 +165,6 @@ OUTPUT:
 If you have same error like this:
 
 
-<p align="center">
-  <img width="483" height="306" src="https://user-images.githubusercontent.com/81483791/194764304-efa046f0-1836-4aae-99e6-679bd9f83380.png">
-</p>  
+  <img width="483" height="306" src="https://user-images.githubusercontent.com/81483791/194764304-efa046f0-1836-4aae-99e6-679bd9f83380.png"> 
+  
 You should check your hardware!!
