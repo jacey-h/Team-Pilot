@@ -4,8 +4,7 @@ PiRacer instrument cluster Qt application running on RPi and receiving speed dat
 
 ## **Project Intro**
 
-The PiRacer instrument cluster Qt application project is aimed at creating a real-time speedometer for a racing car. The application will run on a Raspberry Pi and receive speed data from a speed sensor via the Controller Area Network (CAN) protocol. This project will provide an opportunity for students to gain practical experience in software engineering, specifically in the areas of embedded systems, software architecture, and communication protocols. The project will also allow students to apply their knowledge of the Qt framework, which is widely used in the automotive industry for developing embedded applications. The successful completion of this project will demonstrate the students' ability to design and implement a real-world software solution, and their ability to effectively communicate their results.
-
+The PiRacer instrument cluster Qt application project is aimed at creating a real-time speedometer for a racing car. The application will run on a Raspberry Pi and receive speed data from a speed sensor via the Controller Area Network (CAN) protocol. 
 
 
 <p align="center">

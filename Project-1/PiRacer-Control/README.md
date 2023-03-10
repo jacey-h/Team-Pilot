@@ -1,16 +1,16 @@
 # PiRacer Control
 
-- ## Reference site
-[PiRacer Pro AI Kit](https://www.waveshare.com/wiki/PiRacer_Pro_AI_Kit)   
-- - -
-- ## Contents
-[Calibrate Donkey car](#calibrate-donkey-car)   
-[Web Control](#web-control)   
-[Teleoperation](#teleoperation)
+### **Table of Contents**
+- [Calibrate Donkey car](#calibrate-donkey-car)   
+- [Web Control](#web-control)   
+- [Teleoperation](#teleoperation)
+### **Reference**
+- [PiRacer Pro AI Kit](https://www.waveshare.com/wiki/PiRacer_Pro_AI_Kit)   
+
 
 - - -
 ## Calibrate Donkey car
-### 1. Calibrate
+1. Calibrate
 
 ```jsx
 cd ~/mycar
@@ -31,7 +31,7 @@ Enter a PWM setting to test ('q' for quit) (0-1500): 260
 Enter a PWM setting to test ('q' for quit) (0-1500): 460
 ```
 
-### 2. Edit [config.py](http://config.py) file
+2. Edit [config.py](http://config.py) file
 
 ```jsx
 cd ~/mycar
@@ -63,8 +63,10 @@ Open the Chrome in host pc and go to http://<raspberrypi_ip_address>:8887
 
 [`http://10.12.248.219:8887`](http://10.12.248.219:8887/drive)
 
-<img src="https://user-images.githubusercontent.com/81483791/194764670-3f6d9f52-9b9a-4c10-9f14-919ac2dd5d1b.png"  width="500" height="300"/> 
 
+<p align="center">
+  <img width="476" height="241" src="https://user-images.githubusercontent.com/81483791/194764670-3f6d9f52-9b9a-4c10-9f14-919ac2dd5d1b.png">
+</p> 
 
 - - - 
 ## Teleoperation
@@ -100,33 +102,49 @@ So, we can change this control key.
 
  ---
 
-### 1. Connect joystick with Piracer     
+1. Connect joystick with Piracer     
            
 
-### 2. Create joystick creator wizard
+2. Create joystick creator wizard
 
 ```jsx
 cd ~/mycar
 donkey createjs
 ```
 
-### 3. Map button, axis, control
+3. Map button, axis, control
 - Button Map    
 Set joystick button name.    
-<img src="https://user-images.githubusercontent.com/81483791/197397574-a809ec35-74ec-46b6-9389-e5c08760d17d.png"  width="500" height="250"/> 
+
+<p align="center">
+  <img width="486" height="259" src="https://user-images.githubusercontent.com/81483791/197397574-a809ec35-74ec-46b6-9389-e5c08760d17d.png">
+</p> 
 
 -  Axis Map    
 Set joystick axis. We have 4 axis here.
-<img src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png"  width="500" height="350"/> 
+ 
+<p align="center">
+  <img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
+</p>
+ 
 - Control Map
-<img src="https://user-images.githubusercontent.com/81483791/197397592-38d44e51-e921-4523-9093-bfd740f104bc.png"  width="500" height="400"/> 
-<img src="https://user-images.githubusercontent.com/81483791/197397450-465a2782-8411-4bfa-9662-f58d1ebc32bb.png"  width="300" height="220"/> 
+
+<p align="center">
+  <img width="472" height="442" src="https://user-images.githubusercontent.com/81483791/197397592-38d44e51-e921-4523-9093-bfd740f104bc.png">
+</p> 
+
+<p align="center">
+  <img width="255" height="193" src="https://user-images.githubusercontent.com/81483791/197397450-465a2782-8411-4bfa-9662-f58d1ebc32bb.png">
+</p> 
 
 OUTPUT:    
 
-<img src="https://user-images.githubusercontent.com/81483791/194764792-723a088f-4cf3-48fc-b8f2-7d7ec72b433e.png"  width="500" height="250"/> 
+ 
+<p align="center">
+  <img width="429" height="180" src="https://user-images.githubusercontent.com/81483791/194764792-723a088f-4cf3-48fc-b8f2-7d7ec72b433e.png">
+</p> 
 
-### 4. Edit [config.py](http://config.py) file
+4. Edit [config.py](http://config.py) file
 
 ```jsx
 CONTROLLER_TYPE = 'custom' 
