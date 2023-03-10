@@ -8,7 +8,6 @@
 - [PiRacer Pro AI Kit](https://www.waveshare.com/wiki/PiRacer_Pro_AI_Kit)   
 
 
-- - -
 ## Calibrate Donkey car
 1. Calibrate
 
@@ -49,7 +48,6 @@ THROTTLE_FORWARD_PWM = 500      #pwm value for max forward throttle
 THROTTLE_STOPPED_PWM = 370      #pwm value for no movement
 THROTTLE_REVERSE_PWM = 220      #pwm value for max reverse throttle
 ```
-- - -
 
 ## Web Control
 
@@ -68,7 +66,6 @@ Open the Chrome in host pc and go to http://<raspberrypi_ip_address>:8887
   <img width="476" height="241" src="https://user-images.githubusercontent.com/81483791/194764670-3f6d9f52-9b9a-4c10-9f14-919ac2dd5d1b.png">
 </p> 
 
-- - - 
 ## Teleoperation
 
 
@@ -126,7 +123,7 @@ Set joystick axis. We have 4 axis here.
 <p align="center">
   <img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
 </p>
- 
+
 - Control Map
 
 <p align="center">

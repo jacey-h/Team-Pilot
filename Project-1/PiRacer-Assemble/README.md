@@ -7,7 +7,6 @@
 
 ### **Reference**
 - [Donkey car reference](https://docs.donkeycar.com/guide/robot_sbc/setup_raspberry_pi/)
-- - -
 
 ## Assemble following guide
 
@@ -17,7 +16,6 @@
   <img width="500" height="300" src="https://user-images.githubusercontent.com/81483791/194764230-e8d5ad55-4a40-456c-b0b6-a7f33b4bc8a9.png">
 </p> 
 
-- - -
 
 ## Set up Raspberry PI
 
@@ -28,7 +26,7 @@
 2. Download [Raspberry pi imager](https://www.raspberrypi.com/software/) 
 
 
-Choose OS → others → upload .img file
+- Choose OS → others → upload .img file
 
 <p align="center">
   <img width="453" height="304" src="https://user-images.githubusercontent.com/81483791/224414736-7f97db90-ea0f-4e32-b342-d8d263f11e0c.png">
@@ -36,7 +34,7 @@ Choose OS → others → upload .img file
 
 We already downloaded .img file first step
 
-Set up Wifi , SSH 
+- Set up Wifi , SSH 
 
 <p align="center">
   <img width="453" height="304" src="https://user-images.githubusercontent.com/81483791/224414829-07a51751-2488-48f9-bae1-5e7ce8b37a52.png">
@@ -136,7 +134,6 @@ Then test to see if import succeeds.
 ```jsx
 python -c "import cv2"
 ```
-- - -
 ## Create your car application
 
 1. Create Donkeycar from Template
