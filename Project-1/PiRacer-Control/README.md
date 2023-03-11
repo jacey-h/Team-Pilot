@@ -11,43 +11,43 @@
 ## Calibrate Donkey car
 1. Calibrate
 
-```jsx
-cd ~/mycar
-donkey calibrate --channel 0 --bus=1
-```
+    ```jsx
+    cd ~/mycar
+    donkey calibrate --channel 0 --bus=1
+    ```
 
-Check middle : 360
+    Check middle : 360
 
-            right : 260
+        right : 260
 
-            left : 460
+        left : 460
 
-OUTPUT:
+    OUTPUT:
 
-```jsx
-Enter a PWM setting to test ('q' for quit) (0-1500): 360
-Enter a PWM setting to test ('q' for quit) (0-1500): 260
-Enter a PWM setting to test ('q' for quit) (0-1500): 460
-```
+    ```jsx
+    Enter a PWM setting to test ('q' for quit) (0-1500): 360
+    Enter a PWM setting to test ('q' for quit) (0-1500): 260
+    Enter a PWM setting to test ('q' for quit) (0-1500): 460
+    ```
 
 2. Edit [config.py](http://config.py) file
 
-```jsx
-cd ~/mycar
-vim config.py
-```
+    ```jsx
+    cd ~/mycar
+    vim config.py
+    ```
 
-Change `STEERING_LEFT_PWM` , `STEERING_RIGHT_PWM` 
+    Change `STEERING_LEFT_PWM` , `STEERING_RIGHT_PWM` 
 
-```jsx
-STEERING_CHANNEL = 0            #(deprecated) channel on the 9685 pwm board 0-15
-STEERING_LEFT_PWM = 460         #pwm value for full left steering
-STEERING_RIGHT_PWM = 260        #pwm value for full right steering
-THROTTLE_CHANNEL = 0            #(deprecated) channel on the 9685 pwm board 0-15
-THROTTLE_FORWARD_PWM = 500      #pwm value for max forward throttle
-THROTTLE_STOPPED_PWM = 370      #pwm value for no movement
-THROTTLE_REVERSE_PWM = 220      #pwm value for max reverse throttle
-```
+    ```jsx
+    STEERING_CHANNEL = 0            #(deprecated) channel on the 9685 pwm board 0-15
+    STEERING_LEFT_PWM = 460         #pwm value for full left steering
+    STEERING_RIGHT_PWM = 260        #pwm value for full right steering
+    THROTTLE_CHANNEL = 0            #(deprecated) channel on the 9685 pwm board 0-15
+    THROTTLE_FORWARD_PWM = 500      #pwm value for max forward throttle
+    THROTTLE_STOPPED_PWM = 370      #pwm value for no movement
+    THROTTLE_REVERSE_PWM = 220      #pwm value for max reverse throttle
+    ```
 
 ## Web Control
 
@@ -104,34 +104,34 @@ So, we can change this control key.
 
 2. Create joystick creator wizard
 
-```jsx
-cd ~/mycar
-donkey createjs
-```
+    ```jsx
+    cd ~/mycar
+    donkey createjs
+    ```
 
 3. Map button, axis, control
-- Button Map    
-Set joystick button name.    
+    - Button Map    
+    Set joystick button name.    
 
-  <img width="486" height="259" src="https://user-images.githubusercontent.com/81483791/197397574-a809ec35-74ec-46b6-9389-e5c08760d17d.png">
+      <img width="486" height="259" src="https://user-images.githubusercontent.com/81483791/197397574-a809ec35-74ec-46b6-9389-e5c08760d17d.png">
 
--  Axis Map    
-  Set joystick axis. We have 4 axis here.   
-<img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
+    -  Axis Map    
+      Set joystick axis. We have 4 axis here.   
+    <img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
 
-- Control Map
+    - Control Map
 
-  <img width="472" height="442" src="https://user-images.githubusercontent.com/81483791/197397592-38d44e51-e921-4523-9093-bfd740f104bc.png">
+      <img width="472" height="442" src="https://user-images.githubusercontent.com/81483791/197397592-38d44e51-e921-4523-9093-bfd740f104bc.png">
 
-  <img width="255" height="193" src="https://user-images.githubusercontent.com/81483791/197397450-465a2782-8411-4bfa-9662-f58d1ebc32bb.png">
+      <img width="255" height="193" src="https://user-images.githubusercontent.com/81483791/197397450-465a2782-8411-4bfa-9662-f58d1ebc32bb.png">
 
-OUTPUT:    
+    OUTPUT:    
 
- 
-  <img width="429" height="180" src="https://user-images.githubusercontent.com/81483791/194764792-723a088f-4cf3-48fc-b8f2-7d7ec72b433e.png">
+    
+      <img width="429" height="180" src="https://user-images.githubusercontent.com/81483791/194764792-723a088f-4cf3-48fc-b8f2-7d7ec72b433e.png">
 
 4. Edit [config.py](http://config.py) file
 
-```jsx
-CONTROLLER_TYPE = 'custom' 
-```
+    ```jsx
+    CONTROLLER_TYPE = 'custom' 
+    ```

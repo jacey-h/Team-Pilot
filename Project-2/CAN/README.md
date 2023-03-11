@@ -19,66 +19,66 @@ Solution 2. [CAN BUS (FD) Hat](#can-bus-fd-hat)
 
 - How to connect?    
 
-| Raspberry pi  | mcp2515 |
-| --- | --- |
-| 22 | INT |
-| 23 | SCK |
-| 19 | SI |
-| 21 | SO |
-| 24 | CS |
-| 20 | GND |
-| 5V | VCC1 |
-| 3V3 | VCC |
+    | Raspberry pi  | mcp2515 |
+    | --- | --- |
+    | 22 | INT |
+    | 23 | SCK |
+    | 19 | SI |
+    | 21 | SO |
+    | 24 | CS |
+    | 20 | GND |
+    | 5V | VCC1 |
+    | 3V3 | VCC |
 
 1. Update & Upgrade
 
-```jsx
-sudo apt-get update
-sudo apt-get upgrade
-```
+    ```jsx
+    sudo apt-get update
+    sudo apt-get upgrade
+    ```
 
 2. Modify your /boot/config.txt file 
 
-Add following line
+    Add following line
 
-```jsx
-sudo vim /boot/config.txt
-dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25
-dtoverlay=spi-bcm2835-overlay
-```
-interrupt=25 ( INT - GPIO25 )
+    ```jsx
+    sudo vim /boot/config.txt
+    dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25
+    dtoverlay=spi-bcm2835-overlay
+    ```
+    interrupt=25 ( INT - GPIO25 )
 
 3. Install CAN tools
 
-```jsx
-sudo apt-get install can-utils
-pip3 install python-can
-```
+    ```jsx
+    sudo apt-get install can-utils
+    pip3 install python-can
+    ```
 
 4. Reboot
 
 5. Setup CAN interface
 
-```jsx
-sudo ip link set can0 up type can bitrate 500000
-```
+    ```jsx
+    sudo ip link set can0 up type can bitrate 500000
+    ```
 
 6. ifconfig
 
-```jsx
-sudo ifconfig
-```
+    ```jsx
+    sudo ifconfig
+    ```
 
-OUTPUT :
+    OUTPUT :
 
-```jsx
-can0: flags=193<UP,RUNNING,NOARP>  mtu 16
-        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-```
+    ```jsx
+    can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+            unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+            RX packets 0  bytes 0 (0.0 B)
+            RX errors 0  dropped 0  overruns 0  frame 0
+            TX packets 0  bytes 0 (0.0 B)
+            TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+    ```
 
 - Trouble shooting
     
@@ -100,67 +100,67 @@ can0: flags=193<UP,RUNNING,NOARP>  mtu 16
 
 2. Modify your /boot/config.txt file 
 
-Add following line
-```jsx
-sudo vim /boot/config.txt
-dtoverlay=seeed-can-fd-hat-v2
-```
+    Add following line
+    ```jsx
+    sudo vim /boot/config.txt
+    dtoverlay=seeed-can-fd-hat-v2
+    ```
 
 3. Reboot
 
 4. Initialized
 
-```jsx
-dmesg | grep spi
-```
+    ```jsx
+    dmesg | grep spi
+    ```
 
-OUTPUT:
+    OUTPUT:
 
-```jsx
-[    5.848080] spi_master spi0: will run message pump with realtime priority
-[    5.861055] mcp251xfd spi0.1 can0: MCP2518FD rev0.0 (-RX_INT -MAB_NO_WARN +CRC_REG +CRC_RX +CRC_TX +ECC -HD c:40.00MHz m:20.00MHz r:17.00MHz e:16.66MHz) successfully initialized.
-[    5.873396] mcp251xfd spi0.0 can1: MCP2518FD rev0.0 (-RX_INT -MAB_NO_WARN +CRC_REG +CRC_RX +CRC_TX +ECC -HD c:40.00MHz m:20.00MHz r:17.00MHz e:16.66MHz) successfully initialized.
-```
+    ```jsx
+    [    5.848080] spi_master spi0: will run message pump with realtime priority
+    [    5.861055] mcp251xfd spi0.1 can0: MCP2518FD rev0.0 (-RX_INT -MAB_NO_WARN +CRC_REG +CRC_RX +CRC_TX +ECC -HD c:40.00MHz m:20.00MHz r:17.00MHz e:16.66MHz) successfully initialized.
+    [    5.873396] mcp251xfd spi0.0 can1: MCP2518FD rev0.0 (-RX_INT -MAB_NO_WARN +CRC_REG +CRC_RX +CRC_TX +ECC -HD c:40.00MHz m:20.00MHz r:17.00MHz e:16.66MHz) successfully initialized.
+    ```
 
 5. Check ifconfig list
 
-```jsx
-ifconfig -a
-```
+    ```jsx
+    ifconfig -a
+    ```
 
-OUTPUT:
- 
-<img src="https://user-images.githubusercontent.com/81483791/194759745-bf0ca7c9-9d24-4511-8da6-451ba709fe5a.png"  width="533" height="200"/> 
+    OUTPUT:
+    
+    <img src="https://user-images.githubusercontent.com/81483791/194759745-bf0ca7c9-9d24-4511-8da6-451ba709fe5a.png"  width="533" height="200"/> 
 
 6. Install CAN tools
 
-```jsx
-sudo apt-get install can-utils
-pip3 install python-can
-```
+    ```jsx
+    sudo apt-get install can-utils
+    pip3 install python-can
+    ```
 
 7. Set CAN protocol
 
-Arduino CAN_L <===> Raspberry pi 0_L
+    Arduino CAN_L <===> Raspberry pi 0_L
 
-Arduino CAN_H <===> Raspberry pi 0_H
+    Arduino CAN_H <===> Raspberry pi 0_H
 
-```jsx
-sudo ip link set can0 up type can bitrate 500000
-```
+    ```jsx
+    sudo ip link set can0 up type can bitrate 500000
+    ```
 
 8. Check details
 
-```jsx
-ip -details link show can0
-```
+    ```jsx
+    ip -details link show can0
+    ```
 
 
 ## Raspberry pi to Arduino CAN communication
 
 
 - ### Arduino Code (Send data)
-[CAN_send_data.ino](src/CAN_send_data.ino)
+    [CAN_send_data.ino](src/CAN_send_data.ino)
 
 - ### Raspberry pi Code (Recv data)
     1. Open terminal and following:
@@ -174,8 +174,8 @@ ip -details link show can0
 
         [CAN_recv_data.py](src/CAN_recv_data.py)
 
-OUTPUT:
+    OUTPUT:
 
-unsigned char stmp[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+    unsigned char stmp[8] = {1, 2, 3, 4, 5, 6, 7, 8};
 
- <img width="722" height="278" src="https://user-images.githubusercontent.com/81483791/224431801-d45689b8-214d-413f-aa30-25eda011b47c.png">
+    <img width="722" height="278" src="https://user-images.githubusercontent.com/81483791/224431801-d45689b8-214d-413f-aa30-25eda011b47c.png">
