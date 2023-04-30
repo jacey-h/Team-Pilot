@@ -43,9 +43,10 @@ If you connect `D0`  ↔  `2`
 
 `pinMode(2, INPUT)`    
 
-I connected the speed sensor as shown in the picture.
+I connected the speed sensor as shown in the picture.    
+
 <img src="https://user-images.githubusercontent.com/81483791/235363202-7657cc80-8dc5-435f-a187-77649221ef19.png"  width="573" height="289"/> 
 
-If you connected sensors correctly, then execute this file
+If you connected sensors correctly, then execute this file.  
 [sensor.ino](src/temperature.ino)
 
