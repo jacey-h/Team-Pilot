@@ -14,7 +14,7 @@ The PiRacer instrument cluster Qt application project is aimed at creating a rea
 ## **What is CAN protocol?**
 A Controller Area Network (CAN bus) is a vehicle bus standard designed to allow microcontrollers and devices to communicate with each other's applications without a host computer. It is a message-based protocol, designed originally for multiplex electrical wiring within automobiles to save on copper, but it can also be used in many other contexts. For each device, the data in a frame is transmitted serially but in such a way that if more than one device transmits at the same time, the highest priority device can continue while the others back off. Frames are received by all devices, including by the transmitting device.
 <p align="center">
-  <img width="685" height="232" src="https://user-images.githubusercontent.com/81483791/235358843-a96d4c70-d8bb-48fc-b04e-9539cc0be9d0.png">
+  <img width="688" height="305" src="https://user-images.githubusercontent.com/81483791/235360897-9e5b6ab0-f319-4528-b0ca-9176caa34010.png">
 </p>  
 
 
