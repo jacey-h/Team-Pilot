@@ -117,7 +117,7 @@ So, we can change this control key.
 
     -  Axis Map    
       Set joystick axis. We have 4 axis here.   
-      <img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
+        <img width="486" height="348" src="https://user-images.githubusercontent.com/81483791/197397585-26a99d37-c0c7-442b-9899-47e81c402dc8.png">
 
     - Control Map
 
