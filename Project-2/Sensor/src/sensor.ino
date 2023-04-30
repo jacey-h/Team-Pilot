@@ -31,7 +31,7 @@ void docount()  // counts from the speed sensor
 void timerIsr()
 {
   Timer1.detachInterrupt();  //stop the timer
-  int rotation = (counter / 4);// divide by number of holes in Disc
+  int rotation = (counter / 4);// divide by number of holes in Disc -> I used a disk with four holes
 
   int crank_rpm = rotation*60;
   int sp = (3.6 * TWO_PI * crank_rpm * radius) / (60 * gear_ratio);
