@@ -11,5 +11,5 @@ To learn more about the SEA:ME program, you can check it out [here](https://seam
 
 ### [DES Project 1 - PiRacer Assembly](Project-1)
 ### [DES Project 2 - Instrument Cluster](Project-2)
-### [DES Project 3 - Head Unit](Project-2)
-### [DES Project 4 - PDC System](Project-2)
+### [DES Project 3 - Head Unit](Project-3)
+### [DES Project 4 - PDC System](Project-4)

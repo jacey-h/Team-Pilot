@@ -4,7 +4,7 @@
 ### **Table of Contents**
 Solution 1. [Raspberry pi with mcp2515](#1-solution-can---raspberry-pi-with-mcp2515)   
 Solution 2. [CAN BUS (FD) Hat](#can-bus-fd-hat)   
-[Raspberry Pi to Arduino CAN communication](#raspberry-pi-to-arduino-can-communication)
+[Raspberry Pi to Arduino CAN communication](#solution-2-can-bus-fd-hat)
 ### **Reference**
 - [CAN bus on raspberry pi with MCP2515](https://forums.raspberrypi.com/viewtopic.php?t=141052)
 - [CAN communication between Raspberry Pi and Arduino](https://forums.raspberrypi.com/viewtopic.php?t=296117)
@@ -91,7 +91,7 @@ Solution 2. [CAN BUS (FD) Hat](#can-bus-fd-hat)
     
 
 
-## CAN BUS (FD) Hat
+## Solution 2. CAN BUS (FD) Hat
 
 | Type A | Type B |
 | --- | --- |
