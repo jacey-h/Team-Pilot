@@ -1,15 +1,6 @@
 # How to use Commonapi-Dbus on yocto
 
-    
-    
-
- - ### Reference
-    
-    [meta-ivi](https://github.com/GENIVI/meta-ivi)    
-    [systemd](https://velog.io/@markyang92/yocto-meta-raspberrypi)
-    
-
-- ### Contents  
+### **Table of Contents**
  1. [Select commonapi version](#select-commonapi-version)  
  2. [Using Commonapi-Dbus](#using-commonapi-dbus)      
         Step 1.[ Change dbus version (Latest)](#step-1-change-dbus-version-latest)      
@@ -19,7 +10,13 @@
         Step 5.[ Edit local.conf file](#step-5-edit-localconf-file)    
         Step 6.[ Change commonapi version (Latest)](#step-6-change-commonapi-version-latest)    
         Step 7.[ Make own image](#step-7-make-own-image)    
-        Step 8.[ BitBake](#step-8-bitbake)    
+        Step 8.[ BitBake](#step-8-bitbake)   
+### **Reference** 
+
+- [meta-ivi](https://github.com/GENIVI/meta-ivi)    
+- [systemd](https://velog.io/@markyang92/yocto-meta-raspberrypi)
+ 
+ 
 
 
 
@@ -194,6 +191,6 @@ bitbake api-test
 
 - Trouble Shooting
     
-    If you have have any other error form meta-ivi,
+    If you have have any other error from meta-ivi,
     
     I recommend to delete the file or directory that error occured

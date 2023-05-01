@@ -100,7 +100,7 @@ Add following line:
 
 ```jsx
 /home/username/yocto/poky/meta-raspberrypi \  
-/home/username*yocto/poky/meta-openembedded/meta-oe \
+/home/username/yocto/poky/meta-openembedded/meta-oe \
 /home/username/yocto/poky/meta-openembedded/meta-multimedia \
 /home/username/yocto/poky/meta-openembedded/meta-networking \
 /home/username/yocto/poky/meta-openembedded/meta-perl \

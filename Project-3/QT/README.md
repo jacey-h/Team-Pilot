@@ -1,19 +1,17 @@
 # How to use QT on yocto
 
+### **Table of Contents**
+  Step 1.[ Execute qt example file](#step-1-execute-qt-example-file)  
+  Step 2-1.[ Using SDK](#step-2-1-using-sdk)  
+  Step 2-2.[ Setup QT creator in Ubuntu (host PC)](#step-2-2-setup-qt-creator-in-ubuntu-host-pc)  
+  Step 3.[ Using qmake (or cmake) on image](#step-3-using-qmake-or-cmake-on-image)
+### **Reference**
 
-
-- ### Reference
+- [Build Rpi4 Qt5 using Yocto project](http://www.yocto.co.kr/2017/03/yocto-morty-22-qtv57.html)    
+- [Hacking Raspberry Pi 4 with Yocto](https://lancesimms.com/RaspberryPi/HackingRaspberryPi4WithYocto_Part5.html)   
+- [Build Qt SDK1](https://makersweb.net/embedded/12540)   
+- [Build Qt SDK2](https://makersweb.net/embedded/12845?search_target=title_content&search_keyword=sdk)
     
-    [Build Rpi4 Qt5 using Yocto project](http://www.yocto.co.kr/2017/03/yocto-morty-22-qtv57.html)    
-    [Hacking Raspberry Pi 4 with Yocto](https://lancesimms.com/RaspberryPi/HackingRaspberryPi4WithYocto_Part5.html)   
-    [Build Qt SDK1](https://makersweb.net/embedded/12540)   
-    [Build Qt SDK2](https://makersweb.net/embedded/12845?search_target=title_content&search_keyword=sdk)
-    
-- ### Contents
-    Step 1.[ Execute qt example file](#step-1-execute-qt-example-file)  
-    Step 2-1.[ Using SDK](#step-2-1-using-sdk)  
-    Step 2-2.[ Setup QT creator in Ubuntu (host PC)](#step-2-2-setup-qt-creator-in-ubuntu-host-pc)  
-    Step 3.[ Using qmake (or cmake) on image](#step-3-using-qmake-or-cmake-on-image)
 
 
 If you want to use QT on yocto project, I suggest following 3 steps.
@@ -235,7 +233,7 @@ sudo cp hello /{your root directory}
 
 ## **Step 3. Using qmake (or cmake) on image**
 
-I assume you’ve followed up to `step2-2.2`
+I assume you’ve followed up to `step2-1.2`
 
 Now, we can make our simple qt file using `bitbake`.
 
